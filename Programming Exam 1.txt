@@ -1,0 +1,89 @@
+//Programming Assessment
+//Programming 1 Exam 1
+
+//Place your Preprocessor directives here
+#include <iostream>
+using namespace std;
+
+//Function prototype(s) here
+double sum(double averageA, int maxA, int minA, int rangeA);
+
+//Main function definition here
+int main()
+{
+    int a, b, c, d, e, maximum1 = 0, minimum1 = 0, range1 = 0, total = 0, positiveSum = 0, negativeSum = 0;
+    double average1 = 0;
+
+    cout << "Values of Central Tendency" << endl;
+    cout << "     Enter an integer #1: ";
+    cin >> a;
+
+    cout << "     Enter an integer #2: ";
+    cin >> b;
+
+    cout << "     Enter an integer #3: ";
+    cin >> c;
+
+    cout << "     Enter an integer #4: ";
+    cin >> d;
+
+    cout << "     Enter an integer #5: ";
+    cin >> e;
+
+     if (a >=0 || b >= 0 || c >= 0 || d >=0 || e >=0)
+    {
+        positiveSum = a + b + c + d + e;
+    }
+    else if (a < 0 || b < 0 || c < 0 || d <0 || e <0)
+   {
+       negativeSum = a + b + c + d + e;
+   }
+    total = positiveSum + negativeSum;
+
+    if (a > b && a > c && a > d && a > e){
+        maximum1 = a;
+    }
+    else if (b > a && b > c && b > d && b > e) {
+        maximum1 = b;
+    }
+    else if (c > a && c > b && c > d && c > e){
+        maximum1 = c;
+    }
+
+    else if (d > a && d > b && d > c && d > e){
+        maximum1 = d;
+    }
+
+    else if (e > a && e > b && e > c && e > d){
+        maximum1 = e;
+    }
+
+    if (a < b && a < c && a < d && a < e){
+       minimum1 = a;
+    }
+    else if (b < a && b < c && b < d && b < e){
+        minimum1 = b;
+    }
+    else if (c < a && c < b && c < d && c < e){
+       minimum1 = c;
+    }
+    else if (d < a && d < b && d < c && d < e){
+        minimum1 = d;
+    }
+    else if (e < a && e < b && e < c && e < d){
+        minimum1 = e;
+    }
+
+    average1 = total / 5.0;
+
+    range1 = maximum1 - minimum1;
+
+    cout << "The sum of the values of central tendency is:  " << sum(average1, maximum1, minimum1, range1) << endl;
+
+    return 0;
+}
+
+//function definition(s) here
+double sum(double averageA, int maxA, int minA, int rangeA){
+    return double(averageA + maxA + minA + rangeA);
+}
